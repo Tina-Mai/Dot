@@ -4,19 +4,35 @@ import Task from '../components/Task'
 
 export default function Home() {
     const [task, setTask] = useState()  // create a state
-    const [todoItems, setTodoItems] = useState([])  // default value is [] (empty array)
+    const [todoTasks, setTodoTasks] = useState([])  // default value is [] (empty array)
+    const [completedTasks, setCompletedTasks] = useState([])
     const [search, onChangeSearch] = useState()
 
     const handleAddTask = () => {
       Keyboard.dismiss()
-      setTodoItems([...todoItems, task])  // creates a new array of everything in already taskItems + task
+      setTodoTasks([...todoTasks, task])  // creates a new array of everything in already taskItems + task
       setTask(null)  // so that text input area empties
     }
 
-    const handleDeleteTask = (index) => {
-      let itemsCopy = [...todoItems]
+    const handleDeleteTask = (index, isCompleted) => {
+      if (isCompleted) {
+        setCompletedTasks(completedTasks.filter((_, i) => i !== index))
+      } else {
+        setTodoTasks(todoTasks.filter((_, i) => i !== index))
+      }
+    }
+
+    const handleCompleteTask = (index, isCompleted) => {
+      const list = isCompleted ? completedTasks : todoTasks
+      const setter = isCompleted ? setCompletedTasks : setTodoTasks
+      const otherList = isCompleted ? todoTasks : completedTasks
+      const otherSetter = isCompleted ? setTodoTasks : setCompletedTasks
+
+      let item = list[index]
+      let itemsCopy = [...list]
       itemsCopy.splice(index, 1)
-      setTodoItems(itemsCopy)
+      setter(itemsCopy)
+      otherSetter([...otherList, item])
     }
 
     const findTask = (searchPhrase) => {
@@ -41,32 +57,26 @@ export default function Home() {
           {/* todo tasks show up here */}
           <FlatList
             style={{ paddingTop: 30 }}
-            data={todoItems}
+            data={todoTasks}
             renderItem={({ item, index }) => (
-              <Task key={index} index={index} text={item} deleteHandler={handleDeleteTask} />
+              <Task key={index} index={index} text={item} isCompleted={false} completeHandler={handleCompleteTask} deleteHandler={handleDeleteTask} />
             )}
             contentContainerStyle={{ columnGap: 15, flexGrow: 1 }}
             keyboardShouldPersistTaps='handled'
           />
-
-          {/* <ScrollView
-            contentContainerStyle={{ flexGrow: 1 }}
+          <FlatList
+            data={completedTasks}
+            renderItem={({ item, index }) => (
+              <Task key={index} index={index} text={item} isCompleted={true} completeHandler={handleCompleteTask} deleteHandler={handleDeleteTask} />
+            )}
+            contentContainerStyle={{ columnGap: 15, flexGrow: 1 }}
             keyboardShouldPersistTaps='handled'
-          >
-              <View style={styles.items}>
-                  {
-                    todoItems.map((item, index) => {
-                      return (
-                        <Task key={index} index={index} text={item} deleteHandler={handleDeleteTask} />
-                      )
-                    })
-                  }
-              </View>
-          </ScrollView> */}
+          />
           
           {/* add a task section */}
           <KeyboardAvoidingView
             // behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+            behavior={'padding'}
             style={styles.inputTaskWrapper}
           >
             <View style={{width: '75%'}}>

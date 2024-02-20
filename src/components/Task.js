@@ -4,19 +4,18 @@ import React, { useState } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { COLORS, SHADOWS } from '../constants'
 
-const Task = (props) => {
-    const [isCompleted, setIsCompleted] = useState()
+const Task = ({ index, text, isCompleted, completeHandler, deleteHandler }) => {
 
     return (
         <View style={{ opacity: isCompleted ? 0.6 : 1 }}>
             <View style={styles.item}>
 
                 <View style={styles.itemLeft}>
-                    <TouchableOpacity style={isCompleted ? styles.squareComplete : styles.square} onPress={() => setIsCompleted(!isCompleted)}></TouchableOpacity>
-                    <Text style={styles.itemText}>{props.text}</Text>
+                    <TouchableOpacity style={isCompleted ? styles.squareComplete : styles.square} onPress={() => completeHandler(index, isCompleted)}></TouchableOpacity>
+                    <Text style={styles.itemText}>{text}</Text>
                 </View>
 
-                <TouchableOpacity onPress={() => props.deleteHandler(props.index)}>
+                <TouchableOpacity onPress={() => deleteHandler(index, isCompleted)}>
                     <Text style={styles.deleteIcon}>×</Text>
                 </TouchableOpacity>
 
