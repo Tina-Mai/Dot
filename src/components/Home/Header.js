@@ -9,7 +9,7 @@ const Header = ({ navigation }) => {
 
     return (
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-            {/* text header */}
+            {/* text */}
             <View>
                 <View style={{ flexDirection: 'row' }}>
                     <Text style={fonts.specialLargeTitle}>hi </Text>
