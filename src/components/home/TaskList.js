@@ -2,12 +2,7 @@ import React from "react";
 import { View, FlatList } from "react-native";
 import Task from "./Task";
 
-const TaskList = ({
-  todoTasks,
-  completedTasks,
-  completeHandler,
-  deleteHandler,
-}) => {
+const TaskList = ({ todoTasks, completedTasks, completeHandler, deleteHandler }) => {
   return (
     <View>
       <FlatList

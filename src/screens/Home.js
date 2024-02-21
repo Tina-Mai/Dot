@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Keyboard } from "react-native";
+import { Text, View, Keyboard } from "react-native";
 import TaskList from "../components/home/TaskList";
 import AddTaskBar from '../components/home/AddTaskBar';
 import SearchBar from '../components/home/SearchBar';
+import { screen, fonts } from '../constants/styles'
 
 export default function Home() {
   const [todoTasks, setTodoTasks] = useState([]); // default value is [] (empty array)
@@ -42,10 +43,11 @@ export default function Home() {
   const handleSearchTask = (searchPhrase) => {};
 
   return (
-    <View style={styles.container}>
+    <View style={screen.container}>
       <View style={{ flex: 1 }}>
-        <Text style={styles.largeTitle}>Hi Tina</Text>
-        <Text style={styles.sectionTitle}>To-do</Text>
+        {/* header section */}
+        <Text style={fonts.largeTitle}>Hi Tina</Text>
+        <Text style={fonts.sectionTitle}>To-do</Text>
 
         {/* search tasks section */}
         <SearchBar text={search} searchHandler={handleSearchTask} />
@@ -60,25 +62,3 @@ export default function Home() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#F6F5F1",
-    paddingHorizontal: 20,
-    paddingVertical: 60,
-  },
-  largeTitle: {
-    fontSize: 35,
-    fontWeight: "bold",
-    paddingVertical: 15,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: "bold",
-    paddingVertical: 10,
-  },
-  items: {
-    marginTop: 30,
-  },
-});

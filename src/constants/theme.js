@@ -2,11 +2,12 @@ const COLORS = {
     accent: '#B6594C',
     white: '#FFFFFF',
     background: '#F6F5F1',
+    shadow: '#2E303F',
 }
   
 const SHADOWS = {
     regular: {
-        shadowColor: '#2E303F',
+        shadowColor: COLORS.shadow,
         shadowOffset: { width: 3, height: 3 },
         shadowOpacity: 0.08,
         shadowRadius: 20,
