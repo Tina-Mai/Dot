@@ -1,40 +1,26 @@
 import React from "react";
-import { View, FlatList } from "react-native";
+import { View, FlatList, SectionList } from "react-native";
 import Task from "./Task";
 
 const TaskList = ({ todoTasks, completedTasks, completeHandler, deleteHandler }) => {
-  return (
+    const todoTasksSection = [{title: 'Todo Tasks', data: todoTasks.map(task => ({ text: task, isCompleted: false }))}]
+    const completedTasksSection = [{title: 'Completed Tasks', data: completedTasks.map(task => ({ text: task, isCompleted: true }))}]
+
+    return (
     <View>
-      <FlatList
+      <SectionList
         style={{ paddingTop: 30 }}
-        data={todoTasks}
+        sections={[...todoTasksSection, ...completedTasksSection]}
         renderItem={({ item, index }) => (
           <Task
             key={index}
             index={index}
-            text={item}
-            isCompleted={false}
+            text={item.text}
+            isCompleted={item.isCompleted}
             completeHandler={completeHandler}
             deleteHandler={deleteHandler}
           />
         )}
-        contentContainerStyle={{ columnGap: 15, flexGrow: 1 }}
-        keyboardShouldPersistTaps="handled"
-      />
-      <FlatList
-        data={completedTasks}
-        renderItem={({ item, index }) => (
-          <Task
-            key={index}
-            index={index}
-            text={item}
-            isCompleted={true}
-            completeHandler={completeHandler}
-            deleteHandler={deleteHandler}
-          />
-        )}
-        contentContainerStyle={{ columnGap: 15, flexGrow: 1 }}
-        keyboardShouldPersistTaps="handled"
       />
     </View>
   );

@@ -5,6 +5,8 @@ import { inputArea } from "../../constants/styles";
 const SearchBar = ({ text, searchHandler }) => {
   return (
     <View style={inputArea.wrapper}>
+
+    <View style={{ width: "100%" }}>
       <TextInput
         style={inputArea.text}
         placeholder={"Find a task..."}
@@ -12,6 +14,8 @@ const SearchBar = ({ text, searchHandler }) => {
         onChangeText={(text) => searchHandler(text)}
       />
     </View>
+    </View>
+    
   );
 };
 
