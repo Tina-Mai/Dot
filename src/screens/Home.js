@@ -8,7 +8,6 @@ import { screen, fonts } from '../constants/styles'
 export default function Home() {
   const [todoTasks, setTodoTasks] = useState([]); // default value is [] (empty array)
   const [completedTasks, setCompletedTasks] = useState([]);
-  const [allTasks, setAllTasks] = useState(todoTasks.concat(completedTasks));
   const [search, onChangeSearch] = useState();
 
   // adds a new task to list of todoTasks
@@ -16,11 +15,6 @@ export default function Home() {
     Keyboard.dismiss();
     setTodoTasks([...todoTasks, task]); // creates a new array of everything in already taskItems + task
     console.log("Todo:", todoTasks)
-    // setAllTasks(todoTasks.concat(completedTasks));
-    // console.log("Task:", task)
-    // console.log("Todo:", todoTasks)
-    // console.log("Completed:", completedTasks)
-    // console.log("All:", allTasks)
   };
 
   // deletes task from either completeTasks list or todoTasks list
@@ -30,7 +24,6 @@ export default function Home() {
     } else {
       setTodoTasks(todoTasks.filter((_, i) => i !== index));
     }
-    // setAllTasks(todoTasks.concat(completedTasks));
   };
 
   // checks/completes task if previously not complete, unchecks task if already complete
@@ -46,8 +39,6 @@ export default function Home() {
     itemsCopy.splice(index, 1);
     setter(itemsCopy);
     otherSetter([...otherList, item]);
-
-    // setAllTasks(todoTasks.concat(completedTasks));
   };
 
   const handleSearchTask = (searchPhrase) => {};
