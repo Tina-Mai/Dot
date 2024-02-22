@@ -57,17 +57,17 @@ export const buttons = {
     circleButtonWrapper: {
         width: 55,
         height: 55,
-        backgroundColor: "#B6594C",
+        backgroundColor: COLORS.accent,
         borderRadius: 60,
         justifyContent: "center",
         alignItems: "center",
-        shadowColor: "#2E303F",
+        shadowColor: COLORS.shadow,
         shadowOffset: { width: 3, height: 3 },
         shadowOpacity: 0.08,
         shadowRadius: 20,
       },
       circleButtonIcon: {
         fontSize: 25,
-        color: "#FFFFFF",
+        color: COLORS.white,
       },
 }

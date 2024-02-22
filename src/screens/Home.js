@@ -3,18 +3,21 @@ import { Text, View, Keyboard } from "react-native";
 import TaskList from "../components/home/TaskList";
 import AddTaskBar from '../components/home/AddTaskBar';
 import SearchBar from '../components/home/SearchBar';
-import { screen, fonts } from '../constants/styles'
+import { screen, fonts } from '../constants/styles';
+import filter from "lodash.filter";
+
 
 export default function Home() {
   const [todoTasks, setTodoTasks] = useState([]); // default value is [] (empty array)
   const [completedTasks, setCompletedTasks] = useState([]);
-  const [search, onChangeSearch] = useState();
+  const [filteredTodoTasks, setFilteredTodoTasks] = useState(todoTasks);
+  const [filteredCompletedTasks, setFilteredCompletedTasks] = useState(completedTasks);
+  const [search, setSearch] = useState();
 
   // adds a new task to list of todoTasks
   const handleAddTask = (task) => {
     Keyboard.dismiss();
     setTodoTasks([...todoTasks, task]); // creates a new array of everything in already taskItems + task
-    console.log("Todo:", todoTasks)
   };
 
   // deletes task from either completeTasks list or todoTasks list
@@ -41,7 +44,17 @@ export default function Home() {
     otherSetter([...otherList, item]);
   };
 
-  const handleSearchTask = (searchPhrase) => {};
+  const handleSearchTask = (searchPhrase) => {
+    setSearch(searchPhrase)
+    const filteredTodoTasks = filter(todoTasks, (task) => {
+        return (task.toLowerCase()).includes(searchPhrase.toLowerCase());
+    })
+    const filteredCompletedTasks = filter(completedTasks, (task) => {
+        return (task.toLowerCase()).includes(searchPhrase.toLowerCase());
+    })
+    setFilteredTodoTasks(filteredTodoTasks);
+    setFilteredCompletedTasks(filteredCompletedTasks);
+  }; 
 
   return (
     <View style={screen.container}>
@@ -54,7 +67,7 @@ export default function Home() {
         <SearchBar text={search} searchHandler={handleSearchTask} />
 
         {/* task list section */}
-        <TaskList todoTasks={todoTasks} completedTasks={completedTasks} completeHandler={handleCompleteTask} deleteHandler={handleDeleteTask} />
+        <TaskList todoTasks={filteredTodoTasks} completedTasks={filteredCompletedTasks} completeHandler={handleCompleteTask} deleteHandler={handleDeleteTask} />
       </View>
 
       {/* add a task section */}
