@@ -18,6 +18,7 @@ const AddTaskBar = ({ addHandler }) => {
           placeholder={"add a task"}
           value={task}
           onChangeText={(text) => setTask(text)}
+          autoCapitalize="none"
         />
       </View>
 

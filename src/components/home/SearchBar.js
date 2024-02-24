@@ -12,7 +12,8 @@ const SearchBar = ({ text, searchHandler }) => {
         placeholder={"find a task..."}
         value={text}
         onChangeText={(text) => searchHandler(text)}
-        clearButtonMode='always'
+        clearButtonMode="always"
+        autoCapitalize="none"
       />
     </View>
     </View>
