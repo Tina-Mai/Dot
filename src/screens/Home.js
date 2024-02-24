@@ -22,16 +22,17 @@ export default function Home() {
 
   // deletes task from either completeTasks list or todoTasks list
   const handleDeleteTask = (index, isCompleted) => {
-    if (isCompleted) {
-      setCompletedTasks(completedTasks.filter((_, i) => i !== index));
-    } else {
-      setTodoTasks(todoTasks.filter((_, i) => i !== index));
-    }
+    // modularizing!
+    const list = isCompleted ? completedTasks : todoTasks;
+    const setter = isCompleted ? setCompletedTasks : setTodoTasks;
+
+    let itemsCopy = [...list];
+    itemsCopy.splice(index, 1);
+    setter(itemsCopy);
   };
 
   // checks/completes task if previously not complete, unchecks task if already complete
   const handleCompleteTask = (index, isCompleted) => {
-    // modularizing!
     const list = isCompleted ? completedTasks : todoTasks;
     const setter = isCompleted ? setCompletedTasks : setTodoTasks;
     const otherList = isCompleted ? todoTasks : completedTasks;
@@ -59,6 +60,7 @@ export default function Home() {
     setFilteredCompletedTasks(filteredCompletedTasks);
   }; 
 
+  // 
   useEffect(() => {
     const filteredNewTodoTasks = todoTasks.filter((task) =>
       (task.toLowerCase()).includes(search.toLowerCase())
@@ -69,9 +71,6 @@ export default function Home() {
   
     setFilteredTodoTasks(filteredNewTodoTasks);
     setFilteredCompletedTasks(filteredNewCompletedTasks);
-
-    console.log("todoTasks:", todoTasks);
-    console.log("completedTasks:", completedTasks);
   }, [todoTasks, completedTasks, search]);  
 
   return (
@@ -84,7 +83,7 @@ export default function Home() {
         <SearchBar text={search} searchHandler={handleSearchTask} />
 
         {/* task list section */}
-        <TaskList todoTasks={filteredTodoTasks} completedTasks={filteredCompletedTasks} completeHandler={handleCompleteTask} deleteHandler={handleDeleteTask} />
+        <TaskList todoTasks={todoTasks} completedTasks={completedTasks} filteredTodoTasks={filteredTodoTasks} filteredCompletedTasks={filteredCompletedTasks} completeHandler={handleCompleteTask} deleteHandler={handleDeleteTask} />
       </View>
 
       {/* add a task section */}

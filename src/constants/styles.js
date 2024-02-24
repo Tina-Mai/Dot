@@ -1,5 +1,5 @@
-import { StyleSheet, Dimensions } from "react-native";
-import { COLORS, SHADOWS } from "./theme";
+import { Dimensions } from "react-native";
+import { COLORS, FONT, SHADOWS } from "./theme";
 
 export const dimensions = {
   fullHeight: Dimensions.get("window").height,
@@ -22,6 +22,16 @@ export const fonts = {
   largeTitle: {
     fontSize: 35,
     fontWeight: "bold",
+    paddingVertical: 15,
+  },
+  specialLargeTitle: {
+    fontFamily: FONT.regular,
+    fontSize: 40,
+    paddingVertical: 15,
+  },
+  specialLargeTitleItalic: {
+    fontFamily: FONT.italic,
+    fontSize: 40,
     paddingVertical: 15,
   },
   sectionTitle: {

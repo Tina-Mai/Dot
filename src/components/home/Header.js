@@ -10,10 +10,10 @@ const Header = () =>  {
 
     return (
         <View>
-            <Text style={fonts.largeTitle}>hi tina</Text>
+            <Text style={fonts.specialLargeTitle}>hi tina</Text>
             <View style={{ flexDirection: "row", paddingBottom: 25 }}>
                 <Text>today is </Text>
-                <Text style={{ color: COLORS.accent, fontWeight: "bold" }}>🌱 {formattedDate}</Text>
+                <Text style={{ color: COLORS.accent, fontWeight: "bold" }}>{formattedDate}</Text>
             </View>
             <Text style={fonts.sectionTitle}>to-do</Text>
         </View>

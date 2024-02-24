@@ -4,6 +4,11 @@ const COLORS = {
     background: '#F6F5F1',
     shadow: '#2E303F',
 }
+
+const FONT = {
+    regular: "PlayfairDisplay",
+    italic: "PlayfairDisplay-Italic",
+}
   
 const SHADOWS = {
     regular: {
@@ -14,5 +19,5 @@ const SHADOWS = {
     },
 }
   
-export { COLORS, SHADOWS }
+export { COLORS, FONT, SHADOWS }
   
