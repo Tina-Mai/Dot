@@ -60,7 +60,7 @@ export default function Home() {
     setFilteredCompletedTasks(filteredCompletedTasks);
   }; 
 
-  // 
+  // refresh
   useEffect(() => {
     const filteredNewTodoTasks = todoTasks.filter((task) =>
       (task.toLowerCase()).includes(search.toLowerCase())

@@ -12,7 +12,7 @@ const Header = () =>  {
         <View>
             <Text style={fonts.specialLargeTitle}>hi tina</Text>
             <View style={{ flexDirection: "row", paddingBottom: 25 }}>
-                <Text>today is </Text>
+                <Text style={{ color: COLORS.gray }}>today is </Text>
                 <Text style={{ color: COLORS.accent, fontWeight: "bold" }}>{formattedDate}</Text>
             </View>
             <Text style={fonts.sectionTitle}>to-do</Text>

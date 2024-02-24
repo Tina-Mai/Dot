@@ -4,7 +4,7 @@ import { buttons } from "../../../constants/styles"
 
 const SignUpButton = ({ navigation }) => {
     return (
-        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+        <TouchableOpacity onPress={() => navigation.navigate('SignUp1')}>
             <View style={buttons.textButtonWrapper}>
                 <Text style={buttons.textButtonText}>get started</Text>
             </View>
