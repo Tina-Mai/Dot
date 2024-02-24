@@ -1,13 +1,16 @@
 // sign up: enter phone number screen
 
-import React from 'react'
-import { View, Text } from 'react-native'
+import React, { useState } from 'react'
+import { View, Text, TextInput } from 'react-native'
 import { screen, fonts } from '../../../constants/styles'
 import NextButton from '../../../components/Onboarding/NextButton'
 import BackButton from '../../../components/Onboarding/BackButton'
+import PhoneInput from '../../../components/Onboarding/SignUp1/PhoneInput'
 import { COLORS } from '../../../constants/theme'
 
 export default function SignUp1({ navigation }) {
+    const [phone, setPhone] = useState("");
+
     return (
         <View style={screen.container}>
             <View style={{ flex: 1 }}>
@@ -22,9 +25,10 @@ export default function SignUp1({ navigation }) {
                         <Text style={fonts.specialLargeTitleItalic}>number?</Text>
                     </View>
                 </View>
-                <Text style={{ color: COLORS.gray }}>we'll text you a verification code. message and data rates may apply.</Text>
+                <Text style={{ color: COLORS.gray, paddingBottom: 30 }}>we'll text you a verification code. message and data rates may apply.</Text>
             
                 {/* text input */}
+                <PhoneInput phone={phone} setPhone={setPhone} />
 
             </View>
 
