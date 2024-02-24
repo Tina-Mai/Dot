@@ -8,7 +8,7 @@ import * as SplashScreen from "expo-splash-screen";
 
 // screens
 import Home from "./src/screens/Home";
-import Welcome from "./src/screens/onboarding/Welcome";
+import Welcome from "./src/screens/Onboarding/Welcome";
 
 // prevents splash screen from auto-hiding while fonts are loaded
 SplashScreen.preventAutoHideAsync();

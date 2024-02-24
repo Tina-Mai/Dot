@@ -1,13 +1,13 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 import { screen, fonts } from '../../constants/styles'
-import SignUpButton from '../../components/onboarding/SignUpButton'
-import LoginButton from '../../components/onboarding/LoginButton'
+import SignUpButton from '../../components/Onboarding/Welcome/SignUpButton'
+import LoginButton from '../../components/Onboarding/Welcome/LoginButton'
 
 import { StyleSheet } from 'react-native';
 import { COLORS } from '../../constants/theme';
 
-export default function Welcome() {
+export default function Welcome({ navigation }) {
   return (
     <View style={screen.container}>
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
@@ -23,7 +23,7 @@ export default function Welcome() {
 
         {/* buttons */}
         <View style={{ alignItems: 'center' }}>
-            <SignUpButton />
+            <SignUpButton navigation={ navigation }/>
             <LoginButton />
         </View>
     </View>
