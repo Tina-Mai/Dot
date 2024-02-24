@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { View, Text, KeyboardAvoidingView, TouchableOpacity, TextInput, StyleSheet } from "react-native";
+import { View, Text, KeyboardAvoidingView, TouchableOpacity, TextInput } from "react-native";
 import { inputArea, buttons } from "../../constants/styles"
 
 const AddTaskBar = ({ addHandler }) => {
-  const [task, setTask] = useState();
+  const [task, setTask] = useState("");
 
   return (
     <KeyboardAvoidingView
@@ -15,7 +15,7 @@ const AddTaskBar = ({ addHandler }) => {
       <View style={{ width: "75%" }}>
         <TextInput
           style={inputArea.text}
-          placeholder={"Add a task"}
+          placeholder={"add a task"}
           value={task}
           onChangeText={(text) => setTask(text)}
         />
@@ -23,8 +23,10 @@ const AddTaskBar = ({ addHandler }) => {
 
       <TouchableOpacity
         onPress={() => {
-          addHandler(task);
-          setTask(null);
+          if (task !== "") {
+            addHandler(task);
+            setTask(null);
+          }
         }}
       >
         <View style={buttons.circleButtonWrapper}>

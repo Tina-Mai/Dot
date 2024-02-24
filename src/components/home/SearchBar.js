@@ -9,7 +9,7 @@ const SearchBar = ({ text, searchHandler }) => {
     <View style={{ width: "100%" }}>
       <TextInput
         style={inputArea.text}
-        placeholder={"Find a task..."}
+        placeholder={"find a task..."}
         value={text}
         onChangeText={(text) => searchHandler(text)}
         clearButtonMode='always'

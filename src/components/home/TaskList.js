@@ -1,5 +1,5 @@
 import React from "react";
-import { View, FlatList, SectionList } from "react-native";
+import { SectionList } from "react-native";
 import Task from "./Task";
 
 const TaskList = ({ todoTasks, completedTasks, completeHandler, deleteHandler }) => {
@@ -7,7 +7,6 @@ const TaskList = ({ todoTasks, completedTasks, completeHandler, deleteHandler })
     const completedTasksSection = [{title: 'Completed Tasks', data: completedTasks.map(task => ({ text: task, isCompleted: true }))}]
 
     return (
-    <View>
       <SectionList
         style={{ paddingTop: 30 }}
         sections={[...todoTasksSection, ...completedTasksSection]}
@@ -21,8 +20,8 @@ const TaskList = ({ todoTasks, completedTasks, completeHandler, deleteHandler })
             deleteHandler={deleteHandler}
           />
         )}
+        contentContainerStyle={{ paddingBottom: 30 }}
       />
-    </View>
   );
 };
 

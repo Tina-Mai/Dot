@@ -1,7 +1,7 @@
 // functional component for each item in the todo list
 
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { styles } from "./styles/task.style";
 
 const Task = ({ index, text, isCompleted, completeHandler, deleteHandler }) => {

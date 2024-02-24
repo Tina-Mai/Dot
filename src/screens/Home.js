@@ -1,23 +1,23 @@
-import React, { useState } from "react";
-import { Text, View, Keyboard } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Keyboard } from "react-native";
+import Header from "../components/home/Header";
 import TaskList from "../components/home/TaskList";
-import AddTaskBar from '../components/home/AddTaskBar';
 import SearchBar from '../components/home/SearchBar';
-import { screen, fonts } from '../constants/styles';
-import filter from "lodash.filter";
-
+import AddTaskBar from '../components/home/AddTaskBar';
+import { screen } from '../constants/styles';
 
 export default function Home() {
-  const [todoTasks, setTodoTasks] = useState([]); // default value is [] (empty array)
+  const [todoTasks, setTodoTasks] = useState([]);
   const [completedTasks, setCompletedTasks] = useState([]);
-  const [filteredTodoTasks, setFilteredTodoTasks] = useState(todoTasks);
-  const [filteredCompletedTasks, setFilteredCompletedTasks] = useState(completedTasks);
-  const [search, setSearch] = useState();
+  const [filteredTodoTasks, setFilteredTodoTasks] = useState([]);
+  const [filteredCompletedTasks, setFilteredCompletedTasks] = useState([]);
+  const [search, setSearch] = useState("");
 
   // adds a new task to list of todoTasks
   const handleAddTask = (task) => {
-    Keyboard.dismiss();
-    setTodoTasks([...todoTasks, task]); // creates a new array of everything in already taskItems + task
+    Keyboard.dismiss()
+    const newTodoTasks = [...todoTasks, task];
+    setTodoTasks(newTodoTasks);
   };
 
   // deletes task from either completeTasks list or todoTasks list
@@ -44,24 +44,41 @@ export default function Home() {
     otherSetter([...otherList, item]);
   };
 
+  // filters the tasks you see depending on what's in the search bar
   const handleSearchTask = (searchPhrase) => {
-    setSearch(searchPhrase)
-    const filteredTodoTasks = filter(todoTasks, (task) => {
-        return (task.toLowerCase()).includes(searchPhrase.toLowerCase());
-    })
-    const filteredCompletedTasks = filter(completedTasks, (task) => {
-        return (task.toLowerCase()).includes(searchPhrase.toLowerCase());
-    })
+    setSearch(searchPhrase);
+
+    const filteredTodoTasks = todoTasks.filter((task) =>
+        (task.toLowerCase()).includes(searchPhrase.toLowerCase())
+    );
+    const filteredCompletedTasks = completedTasks.filter((task) =>
+        (task.toLowerCase()).includes(searchPhrase.toLowerCase())
+    );
+
     setFilteredTodoTasks(filteredTodoTasks);
     setFilteredCompletedTasks(filteredCompletedTasks);
   }; 
+
+  useEffect(() => {
+    const filteredNewTodoTasks = todoTasks.filter((task) =>
+      (task.toLowerCase()).includes(search.toLowerCase())
+    );
+    const filteredNewCompletedTasks = completedTasks.filter((task) =>
+      (task.toLowerCase()).includes(search.toLowerCase())
+    );
+  
+    setFilteredTodoTasks(filteredNewTodoTasks);
+    setFilteredCompletedTasks(filteredNewCompletedTasks);
+
+    console.log("todoTasks:", todoTasks);
+    console.log("completedTasks:", completedTasks);
+  }, [todoTasks, completedTasks, search]);  
 
   return (
     <View style={screen.container}>
       <View style={{ flex: 1 }}>
         {/* header section */}
-        <Text style={fonts.largeTitle}>Hi Tina</Text>
-        <Text style={fonts.sectionTitle}>To-do</Text>
+        <Header />
 
         {/* search tasks section */}
         <SearchBar text={search} searchHandler={handleSearchTask} />
