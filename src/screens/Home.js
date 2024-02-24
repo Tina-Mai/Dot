@@ -22,11 +22,7 @@ export default function Home() {
 
   // deletes task from either completeTasks list or todoTasks list
   const handleDeleteTask = (index, isCompleted) => {
-    // if (isCompleted) {
-    //   setCompletedTasks(completedTasks.filter((_, i) => i !== index));
-    // } else {
-    //   setTodoTasks(todoTasks.filter((_, i) => i !== index));
-    // }
+    // modularizing!
     const list = isCompleted ? completedTasks : todoTasks;
     const setter = isCompleted ? setCompletedTasks : setTodoTasks;
 
@@ -37,7 +33,6 @@ export default function Home() {
 
   // checks/completes task if previously not complete, unchecks task if already complete
   const handleCompleteTask = (index, isCompleted) => {
-    // modularizing!
     const list = isCompleted ? completedTasks : todoTasks;
     const setter = isCompleted ? setCompletedTasks : setTodoTasks;
     const otherList = isCompleted ? todoTasks : completedTasks;
@@ -76,9 +71,6 @@ export default function Home() {
   
     setFilteredTodoTasks(filteredNewTodoTasks);
     setFilteredCompletedTasks(filteredNewCompletedTasks);
-
-    console.log("todoTasks:", todoTasks);
-    console.log("completedTasks:", completedTasks);
   }, [todoTasks, completedTasks, search]);  
 
   return (
