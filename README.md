@@ -1,3 +1,3 @@
-# Todo List App
+# Cozy To-Do App
 
-a simple todo list app so Tina can practice React Native x Supabase, yay 🤓
+a simple, cozy to-do list app with sleek onboarding and an intuitive home page. so Tina can practice React Native x Supabase, yay 🤓
