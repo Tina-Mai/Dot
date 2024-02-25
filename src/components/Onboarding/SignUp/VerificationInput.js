@@ -1,18 +1,19 @@
 import React from "react";
-import { View, Text, TextInput } from "react-native";
-import { fonts, inputArea } from "../../../constants/styles";
+import { View, TextInput } from "react-native";
+import { inputArea } from "../../../constants/styles";
 
-const PhoneInput = ({ phone, setPhone }) => {
+const PhoneInput = ({ code, setCode }) => {
   return (
     <View style={inputArea.wrapper}>
       <View style={{ width: "100%" }}>
         <TextInput
           style={inputArea.text}
-          placeholder={"+1 XXX XXX XXX"}
-          value={phone}
-          onChangeText={(phone) => setPhone(phone)}
+          placeholder={"XXX XXX"}
+          value={code}
+          onChangeText={(code) => setCode(code)}
           clearButtonMode="always"
           autoCapitalize="none"
+          inputMode="numeric"
         />
       </View>
     </View>

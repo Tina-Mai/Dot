@@ -5,7 +5,7 @@ import { View, Text, TextInput } from 'react-native'
 import { screen, fonts } from '../../../constants/styles'
 import NextButton from '../../../components/Onboarding/NextButton'
 import BackButton from '../../../components/Onboarding/BackButton'
-import PhoneInput from '../../../components/Onboarding/SignUp1/PhoneInput'
+import PhoneInput from '../../../components/Onboarding/SignUp/PhoneInput'
 import { COLORS } from '../../../constants/theme'
 
 export default function SignUp1({ navigation }) {

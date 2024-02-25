@@ -38,7 +38,7 @@ export default function App() {
   return (
     <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="SignUp1" screenOptions={{ headerShown: false }}>
+        <Stack.Navigator initialRouteName="Welcome" screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Welcome" component={Welcome} options={{ title: "Welcome" }} />
           <Stack.Screen name="SignUp1" component={SignUp1} options={{ title: "Sign Up: Phone" }} />
           <Stack.Screen name="SignUp2" component={SignUp2} options={{ title: "Sign Up: Verification" }} />

@@ -1,12 +1,16 @@
 // sign up: verification code screen
 
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text } from 'react-native'
 import { screen, fonts } from '../../../constants/styles'
 import NextButton from '../../../components/Onboarding/NextButton'
 import BackButton from '../../../components/Onboarding/BackButton'
+import VerificationInput from '../../../components/Onboarding/SignUp/VerificationInput'
+import { COLORS } from '../../../constants/theme'
 
 export default function SignUp2({ navigation }) {
+    const [code, setCode] = useState("");
+
     return (
         <View style={screen.container}>
             <View style={{ flex: 1 }}>
@@ -20,12 +24,16 @@ export default function SignUp2({ navigation }) {
                         <Text style={fonts.specialLargeTitleItalic}>verification code</Text>
                     </View>
                 </View>
+                <Text style={{ color: COLORS.gray, paddingBottom: 30 }}>didn't get a code?</Text>
+
+                {/* text input */}
+                <VerificationInput code={code} setCode={setCode} />
             </View>
 
             {/* next button */}
             <View style={{ alignItems: 'right', justifyContent: 'space-between', flexDirection: 'row' }}>
                 <View />
-                <NextButton navigation={navigation} nextScreen={'SignUp2'} />
+                <NextButton navigation={navigation} nextScreen={'Home'} />
             </View>
         </View>
     )

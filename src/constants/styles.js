@@ -39,6 +39,11 @@ export const fonts = {
     fontWeight: "bold",
     paddingVertical: 10,
   },
+  specialSectionTitle: {
+    fontFamily: CUSTOM_FONT.regular,
+    fontSize: 24,
+    paddingVertical: 10,
+  },
   icon: {
     fontSize: 25,
   },
