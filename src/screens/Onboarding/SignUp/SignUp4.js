@@ -1,39 +1,35 @@
-// sign up: verification code screen
+// sign up: profile pic
 
 import React, { useState } from 'react'
 import { View, Text } from 'react-native'
 import { screen, fonts } from '../../../constants/styles'
 import NextButton from '../../../components/Onboarding/NextButton'
 import BackButton from '../../../components/Onboarding/BackButton'
-import VerificationInput from '../../../components/Onboarding/SignUp/VerificationInput'
 import { COLORS } from '../../../constants/theme'
 
 export default function SignUp2({ navigation }) {
-    const [code, setCode] = useState("");
+    const [firstName, setFirstName] = useState("");
 
     return (
         <View style={screen.container}>
             <View style={{ flex: 1 }}>
                 {/* back button */}
-                <BackButton navigation={navigation} prevScreen={'SignUp1'}/>
+                <BackButton navigation={navigation} prevScreen={'SignUp3'}/>
 
                 {/* header */}
                 <View style={{ flexDirection: 'row', flexWrap: true, paddingTop: 40 }}>
-                    <Text style={fonts.specialLargeTitle}>enter your </Text>
-                    <View style={{ marginTop: -30 }}>
-                        <Text style={fonts.specialLargeTitleItalic}>verification code</Text>
-                    </View>
+                    <Text style={fonts.specialLargeTitle}>add a </Text>
+                    <Text style={fonts.specialLargeTitleItalic}>profile pic</Text>
                 </View>
-                <Text style={{ color: COLORS.gray, paddingBottom: 30 }}>didn't get a code?</Text>
+                <Text style={{ color: COLORS.gray, paddingBottom: 30 }}>say cheese  📸</Text>
 
-                {/* text input */}
-                <VerificationInput code={code} setCode={setCode} />
+                {/* photo input */}
             </View>
 
             {/* next button */}
             <View style={{ alignItems: 'right', justifyContent: 'space-between', flexDirection: 'row' }}>
                 <View />
-                <NextButton navigation={navigation} nextScreen={'SignUp3'} />
+                <NextButton navigation={navigation} nextScreen={'Home'} />
             </View>
         </View>
     )

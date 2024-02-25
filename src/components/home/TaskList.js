@@ -26,8 +26,8 @@ const TaskList = ({ todoTasks, completedTasks, filteredTodoTasks, filteredComple
               />
             );
         }}
-    
-        // contentContainerStyle={{ paddingBottom: 30 }}
+        overflow={'visible'}
+        contentContainerStyle={{ paddingBottom: 30 }}
       />
   );
 };

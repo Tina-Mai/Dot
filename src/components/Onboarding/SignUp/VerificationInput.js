@@ -1,10 +1,10 @@
 import React from "react";
-import { View, TextInput } from "react-native";
+import { View, TextInput, ScrollView } from "react-native";
 import { inputArea } from "../../../constants/styles";
 
 const PhoneInput = ({ code, setCode }) => {
   return (
-    <View style={inputArea.wrapper}>
+    <ScrollView contentContainerStyle={inputArea.wrapper} keyboardShouldPersistTaps={'handled'} scrollEnabled={false} overflow={'visible'}>
       <View style={{ width: "100%" }}>
         <TextInput
           style={inputArea.text}
@@ -16,7 +16,7 @@ const PhoneInput = ({ code, setCode }) => {
           inputMode="numeric"
         />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
