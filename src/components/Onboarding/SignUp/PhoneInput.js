@@ -4,12 +4,12 @@ import { inputArea } from "../../../constants/styles";
 
 const PhoneInput = ({ phone, setPhone }) => {
   return (
-    <ScrollView contentContainerStyle={inputArea.wrapper} keyboardShouldPersistTaps={'handled'} scrollEnabled={false} overflow={'visible'}>
+    <ScrollView keyboardShouldPersistTaps={'handled'} scrollEnabled={false} style={{ overflow: 'visible' }}>
         <View style={inputArea.wrapper}>
             <View style={{ width: "100%" }}>
                 <TextInput
                 style={inputArea.text}
-                placeholder={"+1 XXX XXX XXX"}
+                placeholder={"+1  XXX XXX XXX"}
                 value={phone}
                 onChangeText={(phone) => setPhone(phone)}
                 clearButtonMode="always"

@@ -10,7 +10,7 @@ const AddTaskBar = ({ addHandler }) => {
       // behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       behavior={"padding"}
       style={inputArea.wrapper}
-      contentContainerStyle={{ paddingBottom: 15 }}
+    //   contentContainerStyle={{ paddingBottom: 15 }}
     >
       <View style={{ width: "75%" }}>
         <TextInput
