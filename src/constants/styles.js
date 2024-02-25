@@ -1,5 +1,5 @@
 import { Dimensions } from "react-native";
-import { COLORS, FONT, SHADOWS } from "./theme";
+import { COLORS, CUSTOM_FONT, SHADOWS } from "./theme";
 
 export const dimensions = {
   fullHeight: Dimensions.get("window").height,
@@ -25,18 +25,23 @@ export const fonts = {
     paddingVertical: 15,
   },
   specialLargeTitle: {
-    fontFamily: FONT.regular,
+    fontFamily: CUSTOM_FONT.regular,
     fontSize: 40,
     paddingVertical: 15,
   },
   specialLargeTitleItalic: {
-    fontFamily: FONT.italic,
+    fontFamily: CUSTOM_FONT.italic,
     fontSize: 40,
     paddingVertical: 15,
   },
   sectionTitle: {
     fontSize: 24,
     fontWeight: "bold",
+    paddingVertical: 10,
+  },
+  specialSectionTitle: {
+    fontFamily: CUSTOM_FONT.regular,
+    fontSize: 24,
     paddingVertical: 10,
   },
   icon: {
@@ -78,6 +83,28 @@ export const buttons = {
       },
       circleButtonIcon: {
         fontSize: 25,
+        color: COLORS.white,
+      },
+      textButtonWrapper: {
+        width: "100%",
+        backgroundColor: COLORS.black,
+        borderRadius: 60,
+        flexDirection: "row",
+        justifyContent: "space-around", // as opposed to 'space-between'
+        justifyContent: "center",
+        alignItems: "center",
+        shadowColor: COLORS.shadow,
+        shadowOffset: { width: 3, height: 3 },
+        shadowOpacity: 0.08,
+        shadowRadius: 20,
+        paddingVertical: 15,
+        paddingHorizontal: 15,
+      },
+      textButtonText: {
+        width: "100%",
+        textAlign: "center",
+        fontSize: 18,
+        fontWeight: 500,
         color: COLORS.white,
       },
 }

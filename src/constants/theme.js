@@ -1,13 +1,15 @@
 const COLORS = {
     accent: '#B6594C',
     white: '#FFFFFF',
+    black: '#000000',
     background: '#F6F5F1',
+    gray: '#8E8E93',
     shadow: '#2E303F',
 }
 
-const FONT = {
-    regular: "PlayfairDisplay",
-    italic: "PlayfairDisplay-Italic",
+const CUSTOM_FONT = {
+    regular: 'PlayfairDisplay',
+    italic: 'PlayfairDisplayItalic',
 }
   
 const SHADOWS = {
@@ -19,5 +21,5 @@ const SHADOWS = {
     },
 }
   
-export { COLORS, FONT, SHADOWS }
+export { COLORS, CUSTOM_FONT, SHADOWS }
   

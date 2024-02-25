@@ -2,7 +2,7 @@
 
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import { styles } from "./styles/task.style";
+import { styles } from "./styles/Task.style";
 
 const Task = ({ index, text, isCompleted, completeHandler, deleteHandler }) => {
   return (

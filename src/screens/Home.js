@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { View, Keyboard } from "react-native";
-import Header from "../components/home/Header";
-import TaskList from "../components/home/TaskList";
-import SearchBar from '../components/home/SearchBar';
-import AddTaskBar from '../components/home/AddTaskBar';
+import Header from "../components/Home/Header";
+import TaskList from "../components/Home/TaskList";
+import SearchBar from '../components/Home/SearchBar';
+import AddTaskBar from '../components/Home/AddTaskBar';
 import { screen } from '../constants/styles';
 
 export default function Home() {
@@ -60,7 +60,7 @@ export default function Home() {
     setFilteredCompletedTasks(filteredCompletedTasks);
   }; 
 
-  // 
+  // refresh
   useEffect(() => {
     const filteredNewTodoTasks = todoTasks.filter((task) =>
       (task.toLowerCase()).includes(search.toLowerCase())
