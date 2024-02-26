@@ -7,11 +7,11 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 
 // screens
-import Welcome from "./src/screens/Onboarding/Welcome";
-import SignUp1 from "./src/screens/Onboarding/SignUp/SignUp1";
-import SignUp2 from "./src/screens/Onboarding/SignUp/SignUp2";
-import SignUp3 from "./src/screens/Onboarding/SignUp/SignUp3";
-import SignUp4 from "./src/screens/Onboarding/SignUp/SignUp4";
+import Welcome from "./src/screens/Welcome";
+import SignUp1 from "./src/screens/SignUp/SignUp1";
+import SignUp2 from "./src/screens/SignUp/SignUp2";
+import SignUp3 from "./src/screens/SignUp/SignUp3";
+import SignUp4 from "./src/screens/SignUp/SignUp4";
 import Home from "./src/screens/Home";
 import Friends from "./src/screens/Friends";
 import Settings from "./src/screens/Settings";

@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react'
 import { View, Text } from 'react-native'
-import { COLORS, screen, fonts } from '../../../constants'
-import BackButton from '../../../components/Onboarding/BackButton'
-import PhotoUpload from '../../../components/Onboarding/SignUp/PhotoUpload'
+import { COLORS, screen, fonts } from '../../constants'
+import BackButton from '../../components/Onboarding/BackButton'
+import PhotoUpload from '../../components/Onboarding/SignUp/PhotoUpload'
 
 export default function SignUp2({ navigation }) {
     return (

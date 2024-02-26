@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react'
 import { View, Text } from 'react-native'
-import BackButton from '../../../components/Onboarding/BackButton'
-import VerificationInput from '../../../components/Onboarding/SignUp/VerificationInput'
-import { COLORS, screen, fonts } from '../../../constants'
+import BackButton from '../../components/Onboarding/BackButton'
+import VerificationInput from '../../components/Onboarding/SignUp/VerificationInput'
+import { COLORS, screen, fonts } from '../../constants'
 
 export default function SignUp2({ navigation }) {
     const [code, setCode] = useState("");

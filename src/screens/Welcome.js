@@ -1,8 +1,8 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import SignUpButton from '../../components/Onboarding/Welcome/SignUpButton'
-import LoginButton from '../../components/Onboarding/Welcome/LoginButton'
-import { COLORS, screen, fonts } from '../../constants';
+import SignUpButton from '../components/Onboarding/Welcome/SignUpButton'
+import LoginButton from '../components/Onboarding/Welcome/LoginButton'
+import { COLORS, screen, fonts } from '../constants';
 
 export default function Welcome({ navigation }) {
   return (
