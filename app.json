@@ -15,12 +15,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tinamai.dotapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#F6F5F1"
       }
     },
     "web": {
@@ -28,18 +29,20 @@
     },
     "extra": {
       "eas": {
-        "projectId": "e7a13775-4643-40c1-b7e5-086dd8c08fce"
+        "projectId": "61927e2f-634b-4191-9a58-d7c9e5cac18f"
       }
     },
     "owner": "tinamai",
     "plugins": [
-        [
-          "expo-font",
-          {
-            "fonts": ["./src/assets/fonts/PlayfairDisplay-Regular.ttf", 
-            "./src/assets/fonts/PlayfairDisplay-Italic.ttf"]
-          }
-        ]
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./src/assets/fonts/PlayfairDisplay-Regular.ttf",
+            "./src/assets/fonts/PlayfairDisplay-Italic.ttf"
+          ]
+        }
       ]
+    ]
   }
 }

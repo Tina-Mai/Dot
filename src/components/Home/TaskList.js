@@ -8,7 +8,7 @@ const TaskList = ({ todoTasks, completedTasks, filteredTodoTasks, filteredComple
 
     return (
       <SectionList
-        style={{ paddingTop: 30 }}
+        style={{ paddingTop: 30, overflow: 'visible' }}
         sections={[...todoTasksSection, ...completedTasksSection]}
         renderItem={({ item }) => {
             const index = item.isCompleted
@@ -26,8 +26,7 @@ const TaskList = ({ todoTasks, completedTasks, filteredTodoTasks, filteredComple
               />
             );
         }}
-    
-        // contentContainerStyle={{ paddingBottom: 30 }}
+        contentContainerStyle={{ paddingBottom: 30 }}
       />
   );
 };

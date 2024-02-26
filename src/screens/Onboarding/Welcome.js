@@ -1,10 +1,8 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import { screen, fonts } from '../../constants/styles'
 import SignUpButton from '../../components/Onboarding/Welcome/SignUpButton'
 import LoginButton from '../../components/Onboarding/Welcome/LoginButton'
-
-import { StyleSheet } from 'react-native';
 import { COLORS } from '../../constants/theme';
 
 export default function Welcome({ navigation }) {
@@ -24,7 +22,7 @@ export default function Welcome({ navigation }) {
         {/* buttons */}
         <View style={{ alignItems: 'center' }}>
             <SignUpButton navigation={ navigation }/>
-            <LoginButton />
+            <LoginButton navigation={ navigation }/>
         </View>
     </View>
   )
