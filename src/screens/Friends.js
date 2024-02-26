@@ -17,7 +17,7 @@ export default function Friends({ navigation }) {
                 <Text style={fonts.specialLargeTitle}>your </Text>
                 <Text style={fonts.specialLargeTitleItalic}>friends</Text>
             </View>
-            <Text style={{ color: COLORS.gray }}>see how many dots your friends completed today</Text>
+            <Text style={{ color: COLORS.gray }}>see how your friends are doing with their to-dos</Text>
 
             {/* friend section */}
             <FriendList friends={friendsList} />
