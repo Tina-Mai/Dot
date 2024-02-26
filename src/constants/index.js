@@ -1,4 +1,27 @@
-import { COLORS, SIZES, SHADOWS } from "./theme"
-import { dimensions, screen, fonts, inputArea, buttons } from "./styles"
+import icons from "./icons";
+import { COLORS, CUSTOM_FONT, SHADOWS } from "./theme";
+import {
+  dimensions,
+  screen,
+  fonts,
+  inputArea,
+  buttons,
+  profile,
+  dot,
+  listItem,
+} from "./styles";
 
-export { COLORS, SIZES, SHADOWS, dimensions, screen, fonts, inputArea, buttons }
+export {
+  icons,
+  COLORS,
+  CUSTOM_FONT,
+  SHADOWS,
+  dimensions,
+  screen,
+  fonts,
+  inputArea,
+  buttons,
+  profile,
+  dot,
+  listItem,
+};

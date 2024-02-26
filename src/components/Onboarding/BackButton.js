@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
-import { fonts } from '../../constants/styles';
+import { fonts } from '../../constants';
 
 const NextButton = ({ navigation, prevScreen }) => {
     return (

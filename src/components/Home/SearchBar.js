@@ -1,6 +1,6 @@
 import React from "react";
 import { TextInput, View } from "react-native";
-import { inputArea } from "../../constants/styles";
+import { inputArea } from "../../constants";
 
 const SearchBar = ({ text, searchHandler }) => {
   return (

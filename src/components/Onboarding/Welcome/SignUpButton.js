@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import { buttons } from "../../../constants/styles"
+import { buttons } from "../../../constants"
 
 const SignUpButton = ({ navigation }) => {
     return (

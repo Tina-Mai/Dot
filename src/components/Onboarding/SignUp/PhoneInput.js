@@ -1,6 +1,6 @@
 import React from "react";
 import { View, TextInput, ScrollView, KeyboardAvoidingView } from "react-native";
-import { inputArea } from "../../../constants/styles";
+import { inputArea } from "../../../constants";
 import NextButton from "../NextButton";
 
 const PhoneInput = ({ phone, setPhone, navigation }) => {

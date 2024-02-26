@@ -2,11 +2,9 @@
 
 import React, { useState } from 'react'
 import { View, Text } from 'react-native'
-import { screen, fonts } from '../../../constants/styles'
-import NextButton from '../../../components/Onboarding/NextButton'
 import BackButton from '../../../components/Onboarding/BackButton'
 import NameInput from '../../../components/Onboarding/SignUp/NameInput'
-import { COLORS } from '../../../constants/theme'
+import { COLORS, screen, fonts } from '../../../constants'
 
 export default function SignUp2({ navigation }) {
     const [firstName, setFirstName] = useState("");

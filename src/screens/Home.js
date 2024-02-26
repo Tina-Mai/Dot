@@ -6,7 +6,7 @@ import SearchBar from '../components/Home/SearchBar';
 import AddTaskBar from '../components/Home/AddTaskBar';
 import { screen } from '../constants/styles';
 
-export default function Home() {
+export default function Home({ navigation }) {
   const [todoTasks, setTodoTasks] = useState([]);
   const [completedTasks, setCompletedTasks] = useState([]);
   const [filteredTodoTasks, setFilteredTodoTasks] = useState([]);
@@ -77,7 +77,7 @@ export default function Home() {
     <View style={screen.container}>
       <View style={{ flex: 1 }}>
         {/* header section */}
-        <Header />
+        <Header navigation={navigation} />
 
         {/* search tasks section */}
         <SearchBar text={search} searchHandler={handleSearchTask} />

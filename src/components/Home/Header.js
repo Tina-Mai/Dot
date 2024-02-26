@@ -1,15 +1,14 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
-import { fonts, profile } from "../../constants/styles";
-import { COLORS } from "../../constants/theme";
+import { View, Text, TouchableOpacity, Image } from "react-native";
+import { COLORS, fonts, profile, icons } from "../../constants";
 
-const Header = () =>  {
+const Header = ({ navigation }) =>  {
     const today = new Date();
-    const options = { weekday: 'long', month: 'long', day: 'numeric' };
+    const options = { weekday: 'long', month: 'short', day: 'numeric' };
     const formattedDate = new Intl.DateTimeFormat('en-US', options).format(today).toLowerCase();
 
     return (
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
             {/* text */}
             <View>
                 <View style={{ flexDirection: 'row' }}>
@@ -23,10 +22,23 @@ const Header = () =>  {
                 <Text style={fonts.specialSectionTitle}>to-do</Text>
             </View>
 
-            {/* profile pic */}
-            <TouchableOpacity style={{ paddingVertical: 20 }}>
-                <View style={profile.wrapper} />
-            </TouchableOpacity>
+            {/* buttons */}
+            <View style={{ flexDirection: 'row', alignItems: 'center', paddingVertical: 25, gap: 15 }}>
+                {/* friends icon */}
+                <TouchableOpacity onPress={() => navigation.navigate('Friends')}>
+                    <Image source={icons.friends} resizeMode='contain' style={{ width: 30, height: 30 }} />
+                </TouchableOpacity>
+
+                {/* settings icon */}
+                <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
+                    <Image source={icons.settings} resizeMode='contain' style={{ width: 30, height: 30 }} />
+                </TouchableOpacity>
+
+                {/* profile pic */}
+                {/* <TouchableOpacity style={{ paddingVertical: 20 }} onPress={() => navigation.navigate('Settings')}>
+                    <View style={profile.small} />
+                </TouchableOpacity> */}
+            </View>
         </View>
     )
 }
