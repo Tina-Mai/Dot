@@ -7,3 +7,8 @@ AppRegistry.registerComponent(appName, () => App);
 
 // start the app by calling the main component
 AppRegistry.runApplication(appName, { rootTag: document.getElementById('root') || document.getElementById('app-root') });
+
+if (Platform.OS === 'web') {
+    const rootTag = document.getElementById('root') || document.getElementById('X');
+    AppRegistry.runApplication(appName, { rootTag });
+}

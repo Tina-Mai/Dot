@@ -109,3 +109,18 @@ export const buttons = {
         color: COLORS.white,
       },
 }
+
+export const profile = {
+  wrapper: {
+    width: 45,
+    height: 45,
+    backgroundColor: COLORS.gray,  // change this later
+    borderRadius: 60,
+    // justifyContent: "center",
+    // alignItems: "center",
+    shadowColor: COLORS.shadow,
+    shadowOffset: { width: 3, height: 3 },
+    shadowOpacity: 0.08,
+    shadowRadius: 20,
+  },
+};
