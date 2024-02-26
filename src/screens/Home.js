@@ -56,7 +56,7 @@ export default function Home({ navigation }) {
         setFilteredCompletedTasks(filteredCompletedTasks);
     };
 
-    // refresh when todoTasks, completedTask, or search changes
+    // refresh when todoTasks, completedTask, or search
     useEffect(() => {
         const filteredNewTodoTasks = todoTasks.filter((task) => task.toLowerCase().includes(search.toLowerCase()));
         const filteredNewCompletedTasks = completedTasks.filter((task) => task.toLowerCase().includes(search.toLowerCase()));
