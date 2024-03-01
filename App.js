@@ -7,12 +7,14 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 
 // screens
+import Welcome from "./src/screens/Welcome";
+import Authentication from "./src/screens/SignUp/Authentication";
+import SignUp2 from "./src/screens/SignUp/SignUp2";
+import SignUp3 from "./src/screens/SignUp/SignUp3";
+import SignUp4 from "./src/screens/SignUp/SignUp4";
 import Home from "./src/screens/Home";
-import Welcome from "./src/screens/Onboarding/Welcome";
-import SignUp1 from "./src/screens/Onboarding/SignUp/SignUp1";
-import SignUp2 from "./src/screens/Onboarding/SignUp/SignUp2";
-import SignUp3 from "./src/screens/Onboarding/SignUp/SignUp3";
-import SignUp4 from "./src/screens/Onboarding/SignUp/SignUp4";
+import Friends from "./src/screens/Friends";
+import Settings from "./src/screens/Settings";
 
 // prevents splash screen from auto-hiding while fonts are loaded
 SplashScreen.preventAutoHideAsync();
@@ -43,11 +45,16 @@ export default function App() {
         <Stack.Navigator initialRouteName="Welcome" screenOptions={{ headerShown: false }}>
 
           <Stack.Screen name="Welcome" component={Welcome} options={{ title: "Welcome" }} />
-          <Stack.Screen name="SignUp1" component={SignUp1} options={{ title: "Sign Up: Phone" }} />
+
+          {/* onboarding screens */}
+          <Stack.Screen name="Authentication" component={Authentication} options={{ title: "Phone Number & Verification" }} />
           <Stack.Screen name="SignUp2" component={SignUp2} options={{ title: "Sign Up: Verification" }} />
           <Stack.Screen name="SignUp3" component={SignUp3} options={{ title: "Sign Up: Name" }} />
           <Stack.Screen name="SignUp4" component={SignUp4} options={{ title: "Sign Up: Profile Pic" }} />
+
           <Stack.Screen name="Home" component={Home} options={{ title: "Home" }} />
+          <Stack.Screen name="Friends" component={Friends} options={{ title: "Friends" }} />
+          <Stack.Screen name="Settings" component={Settings} options={{ title: "Settings" }} />
           
         </Stack.Navigator>
       </NavigationContainer>

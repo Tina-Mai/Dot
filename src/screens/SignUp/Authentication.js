@@ -1,11 +1,12 @@
-// sign up: enter phone number screen
+// enter phone number screen
 
 import React, { useState } from 'react'
 import { View, Text } from 'react-native'
-import { screen, fonts } from '../../../constants/styles'
-import BackButton from '../../../components/Onboarding/BackButton'
-import PhoneInput from '../../../components/Onboarding/SignUp/PhoneInput'
-import { COLORS } from '../../../constants/theme'
+import BackButton from '../../components/Onboarding/BackButton'
+import PhoneInput from '../../components/Onboarding/SignUp/PhoneInput'
+import { COLORS, screen, fonts } from '../../constants'
+
+import supabase from '../../lib/supabase'
 
 export default function SignUp1({ navigation }) {
     const [phone, setPhone] = useState("");

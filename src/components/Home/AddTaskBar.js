@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, KeyboardAvoidingView, TouchableOpacity, TextInput } from "react-native";
-import { inputArea, buttons } from "../../constants/styles";
+import { inputArea, buttons } from "../../constants";
 
 const AddTaskBar = ({ addHandler }) => {
   const [task, setTask] = useState("");
