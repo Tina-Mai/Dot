@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "Dot",
+    "slug": "dotapp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./src/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tinamai.dotapp"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/adaptive-icon.png",
+        "backgroundColor": "#F6F5F1"
+      }
+    },
+    "web": {
+      "favicon": "./src/assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "61927e2f-634b-4191-9a58-d7c9e5cac18f"
+      }
+    },
+    "owner": "tinamai",
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./src/assets/fonts/PlayfairDisplay-Regular.ttf",
+            "./src/assets/fonts/PlayfairDisplay-Italic.ttf"
+          ]
+        }
+      ]
+    ]
+  }
+}
