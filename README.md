@@ -12,8 +12,6 @@ a simple, cozy to-do list app with sleek onboarding and an intuitive home page. 
     -   `./styles`: Folder of component styles
     -   `./icons`: Icon exports
     -   `./images`: Image exports
-    -   `./themes`: Kndrd's color scheme and font sizes
--   `src/navigation/`: Nav stacks using React stack navigation
--   `src/types/`: TypeScript interfaces and types
+    -   `./theme`: Kndrd's color scheme and font sizes
 -   `src/App.js`: Main component that starts the whole app
 -   `index.js`: Entry point of the app as per React Native standards
