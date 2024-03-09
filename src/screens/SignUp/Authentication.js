@@ -8,7 +8,7 @@ import { COLORS, screen, fonts } from '../../constants';
 
 import supabase from '../../lib/supabase';
 
-export default function SignUp1({ navigation }) {
+export default function Authentication({ navigation }) {
     const [phone, setPhone] = useState('');
 
     return (
