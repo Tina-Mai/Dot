@@ -1,23 +1,23 @@
-import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
-import { COLORS, fonts, profile, icons } from "../../constants";
+import React from 'react';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { COLORS, fonts, profile, icons } from '../../constants';
 
-const Header = ({ navigation }) =>  {
+const Header = ({ navigation }) => {
     const today = new Date();
     const options = { weekday: 'long', month: 'short', day: 'numeric' };
     const formattedDate = new Intl.DateTimeFormat('en-US', options).format(today).toLowerCase();
 
     return (
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-            {/* text */}
+            {/* text header */}
             <View>
                 <View style={{ flexDirection: 'row' }}>
                     <Text style={fonts.specialLargeTitle}>hi </Text>
                     <Text style={fonts.specialLargeTitleItalic}>tina</Text>
                 </View>
-                <View style={{ flexDirection: "row", paddingBottom: 25 }}>
+                <View style={{ flexDirection: 'row', paddingBottom: 25 }}>
                     <Text style={{ color: COLORS.gray }}>today is </Text>
-                    <Text style={{ color: COLORS.accent, fontWeight: "bold" }}>{formattedDate}</Text>
+                    <Text style={{ color: COLORS.accent, fontWeight: 'bold' }}>{formattedDate}</Text>
                 </View>
                 <Text style={fonts.specialSectionTitle}>to-do</Text>
             </View>
@@ -40,7 +40,7 @@ const Header = ({ navigation }) =>  {
                 </TouchableOpacity> */}
             </View>
         </View>
-    )
-}
+    );
+};
 
 export default Header;
